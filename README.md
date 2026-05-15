@@ -27,8 +27,21 @@ When a user profile is submitted via the CLI, the static recommender selects the
 5. Run the end-to-end pipeline:
    `python -m src.main`
 
-**Sample Interactions**    
-Below are the results of running the VibeFinder 2.0 pipeline across three distinct user profiles. Notice how the guardrail evaluates each explanation.
+**Sample Interactions**
+
+### Streamlit UI
+
+The full RAG pipeline is exposed visually — every recommendation card shows the scoring math, retrieved knowledge base chunks, grounded Gemini explanation, and guardrail report side-by-side. Run it with `streamlit run app.py`.
+
+![VibeFinder Streamlit interface — recommendation card showing all four pipeline stages](assets/vibefinderHome.png)
+
+Expanding the retrieved chunks reveals the exact markdown content the LLM was grounded on, making the RAG pipeline fully auditable:
+
+![Expanded view showing the full retrieved chunk text alongside the grounded explanation](assets/VibefinderHomeExpanded.png)
+
+### CLI Output
+
+The original CLI pipeline still works for headless runs and demo recordings. Below are three preset profiles:
 
 *Late Night R&B Profile:*
 
